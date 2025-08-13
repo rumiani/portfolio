@@ -1,0 +1,23 @@
+{
+  "HomePage": {
+    "title": "سلام به همگی",
+    "description": "برو به صفحه درباره‌ من"
+  },
+    "ContactPage": {
+    "title": "صفحه تماس",
+    "description": "این صفحه تماس است"
+  },
+    "AboutPage": {
+    "title": "صفحه درباره من",
+    "description": "این صفحه درباره من است"
+  },
+    "ProjectsPage": {
+    "title": "صفحه پروژه‌ها",
+    "description": "این صفحه‌ پروژه‌ها است"
+  },
+  "NotFound": {
+    "title": "صفحه پیدا نشد",
+    "description": "متاسفیم، نتوانستیم صفحه مورد نظر شما را پیدا کنیم.",
+    "go_home": "بازگشت به خانه"
+  }
+}

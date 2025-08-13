@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: ./
+      target: dev
+      dockerfile: Dockerfile
+    image: portfolio
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: npm run dev
+    environment:
+      - CHOKIDAR_USEPOLLING=true
