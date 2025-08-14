@@ -3,21 +3,32 @@
     "title": "سلام به همگی",
     "description": "برو به صفحه درباره‌ من"
   },
-    "ContactPage": {
+  "ContactPage": {
     "title": "صفحه تماس",
     "description": "این صفحه تماس است"
   },
-    "AboutPage": {
+  "AboutPage": {
     "title": "صفحه درباره من",
-    "description": "این صفحه درباره من است"
+    "description": "این صفحه درباره من است",
+    "name": "مازیار رومیانی"
   },
-    "ProjectsPage": {
+  "ProjectsPage": {
     "title": "صفحه پروژه‌ها",
     "description": "این صفحه‌ پروژه‌ها است"
+  },
+  "Navbar": {
+    "home": "خانه",
+    "about": "درباره",
+    "projects": "پروژه‌ها",
+    "contact": "تماس",
+    "menu": "منو"
   },
   "NotFound": {
     "title": "صفحه پیدا نشد",
     "description": "متاسفیم، نتوانستیم صفحه مورد نظر شما را پیدا کنیم.",
     "go_home": "بازگشت به خانه"
+  },
+  "General": {
+    "copyright": "تمامی حقوق محفوظ است."
   }
 }

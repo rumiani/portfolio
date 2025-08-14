@@ -7,17 +7,28 @@
     "title": "Contact page",
     "description": "This is the contact page"
   },
-    "AboutPage": {
+  "AboutPage": {
     "title": "About page",
-    "description": "This is the about page"
+    "description": "This is the about page",
+    "name":"Maziar Rumiani"
   },
-    "ProjectsPage": {
+  "ProjectsPage": {
     "title": "projects page",
     "description": "This is the about page"
   },
- "NotFound": {
+  "Navbar": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "NotFound": {
     "title": "Page not found",
     "description": "Sorry, we couldn't find the page you're looking for.",
     "go_home": "Go Home"
+  },
+  "General":{
+    "copyright":"All rights reserved."
   }
 }
