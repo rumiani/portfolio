@@ -10,27 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-
-const projectsImages = [
-  {
-    id: "one",
-    name: "Project One",
-    imgSrc: "/assets/1.webp",
-    shortDescription: "Short description about this project",
-  },
-  {
-    id: "two",
-    name: "Project Two",
-    imgSrc: "/assets/2.webp",
-    shortDescription: "Short description about this project",
-  },
-  {
-    id: "three",
-    name: "Project Three",
-    imgSrc: "/assets/3.webp",
-    shortDescription: "Short description about this project",
-  },
-];
+import { projects } from "@/components/data/projects";
 
 export function PortfolioCarousel() {
   return (
@@ -40,8 +20,8 @@ export function PortfolioCarousel() {
         className="relative group"
       >
         <CarouselContent className="h-[450px] ">
-          {projectsImages.map((project, index) => (
-            <CarouselItem key={index} className="px-0 ">
+          {projects.map((project, index) => (
+            <CarouselItem key={index} title={project.name} className="px-0 ">
               <a href={`#${project.id}`}>
                 <div className="relative h-[450px] w-full">
                   <Image

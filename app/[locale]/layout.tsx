@@ -5,6 +5,7 @@ import AnimatedLayout from './animated-layout';
 import "@/app/globals.css";
 import Navbar from '@/components/navbar/navbar';
 import { Footer } from '@/components/footer/footer';
+import { ToastContainer } from 'react-toastify';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -28,8 +29,11 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider>
           <AnimatedLayout>
-            <Navbar />
-            {children}
+            <div className='min-h-screen'>
+              <Navbar />
+              {children}
+            </div>
+            <ToastContainer />
             <Footer />
           </AnimatedLayout>
         </NextIntlClientProvider>

@@ -5,19 +5,10 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
+import { AnimatePresence, motion } from 'framer-motion';
+import { Project } from "@/types/types";
 
-export type Project = {
-  id: string;
-  name: string;
-  imgSrc: string;
-  shortDescription: string;
-  fullDescription: string;
-  projectUrl: string;
-  sourceCodeUrl: string;
-  keyFeatures: string[];
-  status: "In Progress" | "Completed" | "Planned";
-  technologies: string[];
-};
+
 
 export default function ProjectCard({
   id,
@@ -32,6 +23,14 @@ export default function ProjectCard({
   technologies,
 }: Project) {
   return (
+          <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3}}
+      >
+
+
     <Card id={id} className="overflow-hidden border border-gray-200 shadow-lg">
       <div className="flex flex-col md:flex-row">
         {/* Left - Image */}
@@ -42,7 +41,7 @@ export default function ProjectCard({
             fill
             className="object-cover"
             priority
-          />
+            />
         </div>
 
         {/* Right - Content */}
@@ -70,8 +69,8 @@ export default function ProjectCard({
               <div className="flex flex-wrap gap-2">
                 {technologies.map((tech, i) => (
                   <span
-                    key={i}
-                    className="bg-gray-100 text-gray-800 text-sm px-2 py-1 rounded-md"
+                  key={i}
+                  className="bg-gray-100 text-gray-800 text-sm px-2 py-1 rounded-md"
                   >
                     {tech}
                   </span>
@@ -92,7 +91,7 @@ export default function ProjectCard({
                   href={sourceCodeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                >
+                  >
                   <FaGithub className="mr-2 h-4 w-4" /> Source Code
                 </a>
               </Button>
@@ -101,5 +100,7 @@ export default function ProjectCard({
         </div>
       </div>
     </Card>
+                    </motion.div>
+
   );
 }
