@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function AboutMe() {
   return (
@@ -60,9 +61,9 @@ export default function AboutMe() {
 
               <div className="mt-auto">
                 <Button asChild size="lg" className="rounded-full shadow-md">
-                  <a href="/about">
+                  <Link href="/about">
                     Learn More About Me →
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </CardContent>

@@ -1,4 +1,3 @@
-import Projects from "@/app/[locale]/projects/page";
 import { PortfolioCarousel } from "./PortfolioCarousel/PortfolioCarousel";
 import ProjectsCards from "./projectCards/projectsCards";
 import AboutMe from "./aboutme/aboutme";

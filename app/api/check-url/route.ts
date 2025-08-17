@@ -6,7 +6,7 @@ export async function POST(req: Request) {
 
     const res = await fetch(url, { method: "HEAD" });
     return NextResponse.json({ ok: res.ok });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ ok: false });
   }
 }
