@@ -4,9 +4,8 @@ export type Project = {
   imgSrc: string;
   shortDescription: string;
   fullDescription: string;
-  projectUrl: string;
+  url: string;
   sourceCodeUrl: string;
   keyFeatures: string[];
-  status: "In Progress" | "Completed" | "Planned";
   technologies: string[];
 };

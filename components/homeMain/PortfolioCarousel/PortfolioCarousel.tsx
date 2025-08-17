@@ -16,6 +16,7 @@ export function PortfolioCarousel() {
   return (
     <div className="w-full">
       <Carousel
+      opts={{ loop: true }}
         plugins={[Autoplay({ delay: 3000 })]}
         className="relative group"
       >

@@ -1,12 +1,13 @@
 "use client"
 import Link from "next/link"
-import { FaLinkedin, FaGithubSquare, FaTwitterSquare } from "react-icons/fa";
 import { navItems } from "../data/navItems";
 import { useTranslations } from "next-intl";
 import { socialLinks } from "../data/socials";
+import { useEffect, useState } from "react";
 
 
 export function Footer() {
+    const [year, setYear] = useState<number | null>(null)
     const t = useTranslations("Navbar");
     const tAbout = useTranslations("AboutPage");
     const tGeneral = useTranslations("General");
@@ -14,6 +15,11 @@ export function Footer() {
         ...item,
         title: t(item.title),
     }));
+
+
+    useEffect(() => {
+        setYear(new Date().getFullYear())
+    }, [])
     return (
         <footer className="w-full border-t mt-8 p-4">
             <div className="flex flex-col items-center md:flex-row md:justify-center md:items-center gap-2 md:gap-3">
@@ -44,7 +50,7 @@ export function Footer() {
                 </div>
                 <div className="w-fit">
                     <p dir="auto" className="text-sm text-center text-muted-foreground">
-                        © {new Date().getFullYear()} {tAbout("name")}. {tGeneral("copyright")}
+                        © {year ?? ""} {tAbout("name")}. {tGeneral("copyright")}
                     </p>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { List } from "lucide-react";
 import Image from "next/image";
 import { navItems } from "../data/navItems";
@@ -14,7 +14,7 @@ export default function Navbar() {
     const pathName = usePathname();
     const pathWithoutLang = "/" + pathName.split("/").slice(2).join("/");
     const t = useTranslations("Navbar");
-    
+
     const translatedNavItems = navItems.map(item => ({
         ...item,
         title: t(item.title),
@@ -38,7 +38,9 @@ export default function Navbar() {
                         </SheetTrigger>
                         <SheetContent side="right" className="w-64">
                             <div className="flex justify-between items-center mb-4">
-                                <span className="text-lg font-bold p-2">{t("menu")}</span>
+                                <SheetTitle className="text-lg font-bold p-2">
+                                    {t("menu")}
+                                </SheetTitle>
                                 <button></button>
                             </div>
                             <div className="flex flex-col gap-2">

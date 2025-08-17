@@ -1,6 +1,7 @@
 import Projects from "@/app/[locale]/projects/page";
 import { PortfolioCarousel } from "./PortfolioCarousel/PortfolioCarousel";
 import ProjectsCards from "./projectCards/projectsCards";
+import AboutMe from "./aboutme/aboutme";
 
 export default function HomeMain() {
 
@@ -10,7 +11,7 @@ export default function HomeMain() {
         <section className="">
           <PortfolioCarousel />
           <div className="px-2 my-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quasi dolorem a reprehenderit, reiciendis rem nobis blanditiis maiores optio consectetur officiis, quis consequatur dolore molestiae laborum tempora. Nisi, aut aperiam.
+            <AboutMe/>
           </div>
           <ProjectsCards/>
         </section>

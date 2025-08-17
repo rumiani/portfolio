@@ -4,6 +4,7 @@ import { projects } from "@/components/data/projects";
 
 
 export default function ProjectsCards() {
+  
   return (
     <div className="space-y-8">
       <h2 className="text-4xl font-bold">Projects</h2>

@@ -13,27 +13,15 @@ export async function POST(req: Request) {
     });
 
     const verifyData = await verifyRes.json();
-    if (!verifyData.success) {
-        return NextResponse.json({ error: "Verification failed" }, { status: 400 });
-    }
-
-    // ✅ Send email via Resend
+    if (!verifyData.success) return NextResponse.json({ error: "Verification failed" }, { status: 400 });
     try {
         await resend.emails.send({
             from: process.env.RESEND_FROM_EMAIL!,
-            to: process.env.RESEND_TO_EMAIL!,
-            subject: `Portfolio Contact: ${title}`,
+            to: [process.env.RESEND_TO_EMAIL!],
+            subject: `Rumiani.ir: ${title}`,
             replyTo: email,
-            text: `You received a new message from your portfolio contact form:
-
-Title: ${title}
-From: ${email}
-
-Message:
-${body}
-`,
+            text: `From: ${email}\n Message:${body}`,
         });
-
         return NextResponse.json({ success: true });
     } catch (error) {
         console.error(error);
