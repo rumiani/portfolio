@@ -17,18 +17,18 @@ export function PortfolioCarousel() {
     <Carousel
       opts={{ loop: true }}
       plugins={[Autoplay({ delay: 3000 })]}
-      className="relative group"
+      className="relative group rounded-2xl"
     >
-      <CarouselContent className="h-[400px]">
+      <CarouselContent className="h-[400px] mx-auto">
         {projects.map((project, index) => (
           <CarouselItem key={index} title={project.name} className="CarouselItem px-0">
             <a href={`#${project.id}`} className="group">
-              <div className="relative h-full mx-auto w-11/12 bg-red-300 rounded-2xl overflow-hidden">
+              <div className="relative h-full w-[98%] bg-red-300 mx-auto rounded-2xl overflow-hidden ">
                 <Image
                   alt={project.name}
                   src={project.imgSrc}
                   fill
-                  className="object-cover"
+                  className="object-cover w-full mx-auto"
                   priority={index === 0}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

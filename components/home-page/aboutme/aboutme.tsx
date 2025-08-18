@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 
 export default function AboutMe() {
 
@@ -16,9 +15,9 @@ export default function AboutMe() {
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8 }}
     >
-      <Card className="border border-base overflow-hidden  shadow-lg max-w-4xl mx-auto">
-        <div className="flex flex-col lg:flex-row">
-          <div className="relative w-full lg:w-1/3 aspect-square group overflow-hidden">
+      <Card className=" border border-base overflow-hidden shadow-lg max-w-4xl mx-auto">
+        <div className="flex flex-col md:flex-row">
+          <div className="relative w-full md:w-1/2 lg:w-1/3 aspect-square group overflow-hidden">
             <Image
               src="/assets/rumiani.png"
               alt="My Photo"
@@ -30,7 +29,7 @@ export default function AboutMe() {
               <h2 className="text-white text-2xl font-bold">Maziar Rumiani</h2>
             </div>
           </div>
-          <div className="flex-1 flex flex-col">
+          <div className="flex-1 flex flex-col mt-4 sm:mt-0">
             <CardHeader className="pb-0">
               <h2 className="text-3xl font-bold">About Me</h2>
               <p className={` text-sm`}>Software Engineer • Problem Solver • Creator</p>

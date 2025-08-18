@@ -8,10 +8,10 @@ export default function HomePage() {
     <div className="font-sans">
       <main className="w-full">
         <section className="flex flex-col md:flex-row justify-between gap-4">
-          <div className="md:w-7/12">
+          <div className="w-full lg:w-2/3">
             <AboutMe />
           </div>
-          <div className="w-full md:w-5/12">
+          <div className="hidden lg:block w-1/3">
             <PortfolioCarousel />
           </div>
         </section>

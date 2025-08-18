@@ -34,12 +34,12 @@ export default async function RootLayout({
         <title>Rumiani</title>
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{const t=localStorage.getItem('theme');const dark=t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',!!dark);document.documentElement.style.colorScheme=dark?'dark':'light';}catch(e){} })()` }} />
       </Head>
-      <body>
+      <body className='max-w-7xl min-h-screen mx-auto'>
         <ThemedLayout>
           <AnimatedLayout>
             <NextIntlClientProvider>
               <Navbar />
-              <div className='min-h-screen'>
+              <div className='p-4 sm:p-6 md:p-8 lg:p-10'>
                 {children}
               </div>
               <Footer />
