@@ -15,7 +15,7 @@ import { toast } from "react-toastify";
 const schema = z.object({
     title: z.string().min(3, "Title is too short"),
     body: z.string().min(10, "Body is too short"),
-    email: z.string().email("Invalid email"),
+    email: z.email("Invalid email"),
     token: z.string().min(1, "Verification required"),
 });
 

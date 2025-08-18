@@ -7,6 +7,8 @@ import Navbar from '@/components/navbar/navbar';
 import { Footer } from '@/components/footer/footer';
 import { ToastContainer } from 'react-toastify';
 import Head from "next/head";
+import { ThemeProvider } from "next-themes";
+import ThemedLayout from './themed-layout';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -26,22 +28,25 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>Rumiani</title>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{const t=localStorage.getItem('theme');const dark=t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',!!dark);document.documentElement.style.colorScheme=dark?'dark':'light';}catch(e){} })()` }} />
       </Head>
       <body>
-        <NextIntlClientProvider>
-          <Navbar />
+        <ThemedLayout>
           <AnimatedLayout>
-            <div className='min-h-screen'>
-              {children}
-            </div>
+            <NextIntlClientProvider>
+              <Navbar />
+              <div className='min-h-screen'>
+                {children}
+              </div>
+              <Footer />
+              <ToastContainer />
+            </NextIntlClientProvider>
           </AnimatedLayout>
-          <Footer />
-          <ToastContainer />
-        </NextIntlClientProvider>
+        </ThemedLayout>
       </body>
     </html>
   );

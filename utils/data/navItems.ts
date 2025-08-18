@@ -20,6 +20,6 @@ type NavItem = {
 export const navItems: NavItem[] = [
   { title: "home", href: "/", icon: HiHome, iconOutline: HiOutlineHome },
   { title: "about", href: "/about", icon: HiUser, iconOutline: HiOutlineUser },
-  { title: "projects", href: "/projects", icon: HiFolder, iconOutline: HiOutlineFolder },
+  // { title: "projects", href: "/projects", icon: HiFolder, iconOutline: HiOutlineFolder },
   { title: "contact", href: "/contact", icon: HiMail, iconOutline: HiOutlineMail },
 ];

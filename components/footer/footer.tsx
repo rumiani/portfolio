@@ -1,9 +1,10 @@
 "use client"
 import Link from "next/link"
-import { navItems } from "../data/navItems";
 import { useTranslations } from "next-intl";
-import { socialLinks } from "../data/socials";
 import { useEffect, useState } from "react";
+import ThemeToggle from "./themeToggle/themeToggle";
+import { socialLinks } from "@/utils/data/socials";
+import { navItems } from "@/utils/data/navItems";
 
 
 export function Footer() {
@@ -21,7 +22,8 @@ export function Footer() {
         setYear(new Date().getFullYear())
     }, [])
     return (
-        <footer className="w-full border-t mt-8 p-4">
+        <footer className="relative w-full border-t mt-8 p-4">
+            <div className="fixed bottom-16 right-4"><ThemeToggle /></div>
             <div className="flex flex-col items-center md:flex-row md:justify-center md:items-center gap-2 md:gap-3">
                 <div className="flex gap-8 w-fit">
                     {translatedNavItems.map((item) => {

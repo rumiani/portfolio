@@ -1,4 +1,4 @@
-import ContactForm from "@/components/contactForm/contactForm";
+import ContactForm from "@/components/contact-page/contactForm/contactForm";
 import { useTranslations } from "next-intl";
 
 export default function Contact() {

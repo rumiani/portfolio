@@ -1,5 +1,5 @@
+import { projects } from "@/utils/data/projects";
 import ProjectCard from "./projectCard/projectCard";
-import { projects } from "@/components/data/projects";
 
 
 
