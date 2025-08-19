@@ -5,8 +5,11 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function AboutMe() {
+  const t = useTranslations("HomePage")
+  console.log(t("jobTitle"));
 
   return (
     <motion.div
@@ -26,25 +29,24 @@ export default function AboutMe() {
               priority
             />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-500">
-              <h2 className="text-white text-2xl font-bold">Maziar Rumiani</h2>
+              <h2 className="text-white text-2xl font-bold">{t("name")}</h2>
             </div>
           </div>
           <div className="flex-1 flex flex-col mt-4 sm:mt-0">
             <CardHeader className="pb-0">
-              <h2 className="text-3xl font-bold">About Me</h2>
-              <p className={` text-sm`}>Software Engineer • Problem Solver • Creator</p>
+              <h2 className="text-3xl font-bold">{t("aboutMe")}</h2>
+              <p className={` text-sm`}>
+                {t("jobTitle")}
+              </p>
             </CardHeader>
 
             <CardContent className="flex flex-col gap-4 pt-4">
               <p className="leading-relaxed">
-                I’m a passionate developer who loves building clean, scalable,
-                and impactful applications. With a strong background in web
-                technologies, I enjoy turning complex problems into elegant
-                solutions.
+                {t("summary")}
               </p>
 
               <div>
-                <h4 className="font-semibold">Technologies I use:</h4>
+                <h4 className="font-semibold">{t("technologiesTitle")}</h4>
                 <div className="flex flex-wrap gap-2 mt-2">
                   {["React", "Next.js", "TypeScript", "TailwindCSS", "Node.js", "docker", "git"].map(
                     (tech, i) => (
@@ -60,9 +62,9 @@ export default function AboutMe() {
               </div>
 
               <div className="mt-auto">
-                <Button asChild size="lg" className="rounded-full shadow-md">
+                <Button asChild variant="outline" size="lg" className="rounded-full shadow-md">
                   <Link href="/about">
-                    Learn More About Me →
+                    {t("learnMoreAboutMe")} →
                   </Link>
                 </Button>
               </div>

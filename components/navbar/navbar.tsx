@@ -23,7 +23,7 @@ export default function Navbar() {
     }));
 
     return (
-        <nav className="w-full border-b border-base px-4 py-3 md:flex md:justify-between md:items-center">
+        <nav dir="ltr" className="w-full border-b border-base px-4 py-3 md:flex md:justify-between md:items-center">
             <div className="flex justify-between items-center ">
                 <div className="flex flex-row ">
                     <Link href="/" className="text-xl font-bold">

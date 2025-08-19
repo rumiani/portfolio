@@ -10,8 +10,7 @@ import { navItems } from "@/utils/data/navItems";
 export function Footer() {
     const [year, setYear] = useState<number | null>(null)
     const t = useTranslations("Navbar");
-    const tAbout = useTranslations("AboutPage");
-    const tGeneral = useTranslations("General");
+    const tFooter = useTranslations("Footer");
     const translatedNavItems = navItems.map(item => ({
         ...item,
         title: t(item.title),
@@ -51,8 +50,8 @@ export function Footer() {
                     })}
                 </div>
                 <div className="w-fit">
-                    <p dir="auto" className="text-sm text-center text-muted-foreground">
-                        © {year ?? ""} {tAbout("name")}. {tGeneral("copyright")}
+                    <p className="text-sm text-center text-muted-foreground">
+                        © {year ?? ""} {tFooter("name")}. {tFooter("copyright")}
                     </p>
                 </div>
             </div>

@@ -8,7 +8,7 @@ export function Spinner({ className, border, diameter }: { className?: string, b
         height: diameter,
         borderWidth: border,
       }}
-      className={`border-t-primary border-gray-200 rounded-full animate-spin ${className || ""}`}
+      className={` border-gray-200 border-t-gray-500 rounded-full animate-spin ${className || ""}`}
     />
   );
 }

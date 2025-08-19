@@ -9,30 +9,22 @@ import { motion } from 'framer-motion';
 import { Project } from "@/types/types";
 import { useEffect, useState } from "react";
 import { Spinner } from "@/components/general/Spinner";
+import { useTranslations } from "next-intl";
 
-export default function ProjectCard({
-  id,
-  name,
-  imgSrc,
-  shortDescription,
-  fullDescription,
-  url,
-  sourceCodeUrl,
-  keyFeatures,
-  technologies,
-}: Project) {
+export default function ProjectCard(project: Project) {
   const [isAvailable, setIsAvailable] = useState<boolean | null>(null);
+  const t = useTranslations("Projects")
 
   useEffect(() => {
     fetch("/api/check-url", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url }),
+      body: JSON.stringify({ url: project.url }),
     })
       .then((res) => res.json())
       .then((data) => setIsAvailable(data.ok))
       .catch(() => setIsAvailable(false));
-  }, [url]);
+  }, [project.url]);
 
   return (
     <motion.div
@@ -42,12 +34,12 @@ export default function ProjectCard({
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <Card id={id} className="border border-base overflow-hidden shadow-lg max-w-lg mx-auto lg:max-w-none lg:w-full">
+      <Card id={project.name} className="border border-base overflow-hidden shadow-lg max-w-lg mx-auto lg:max-w-none lg:w-full">
         <div className="flex flex-col lg:flex-row">
           <div className=" aspect-square relative w-full lg:w-1/3">
             <Image
-              src={imgSrc}
-              alt={name}
+              src={project.imgSrc}
+              alt={project.name}
               fill
               className="object-cover"
               priority
@@ -55,8 +47,8 @@ export default function ProjectCard({
           </div>
           <div className="flex-1 flex flex-col">
             <CardHeader className="pb-0">
-              <h2 className="text-2xl font-bold">{name}</h2>
-              <div className="text-sm flex flex-row gap-1">Status: {isAvailable === null ? (
+              <h2 className="text-2xl font-bold">{t(`${project.name}.name`)}</h2>
+              <div className="text-sm flex flex-row gap-1">{t("status")}: {isAvailable === null ? (
                 <Spinner diameter={15} border={3} className="" />
               ) : (
                 <div className="flex items-center gap-1">
@@ -64,26 +56,26 @@ export default function ProjectCard({
                     className={`h-3 w-3 rounded-full ${isAvailable ? "bg-green-500" : "bg-red-500"
                       }`}
                   ></span>
-                  <span>{isAvailable ? "Available" : "Unavailable"}</span>
+                  <span>{isAvailable ? t("available") : t("unavailable")}</span>
                 </div>
               )}
               </div>
             </CardHeader>
             <CardContent className="flex flex-col gap-4 pt-4">
-              <p className="">{shortDescription}</p>
-              <p className="">{fullDescription}</p>
+              <p className="">{t(`${project.name}.shortDescription`)}</p>
+              <p className="">{t(`${project.name}.fullDescription`)}</p>
               <div>
-                <h4 className="font-semibold">Key Features:</h4>
+                <h4 className="font-semibold">{t("keyFeatures")}</h4>
                 <ul className="list-disc list-inside ">
-                  {keyFeatures.map((feature, i) => (
+                  {t(`${project.name}.keyFeatures`).split(",").map((feature, i) => (
                     <li key={i}>{feature}</li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold">Technologies:</h4>
+                <h4 className="font-semibold">{t("technologies")}</h4>
                 <div className="flex flex-wrap gap-2">
-                  {technologies.map((tech, i) => (
+                  {project.technologies.map((tech, i) => (
                     <span
                       key={i}
                       className="bg-gray-100 text-gray-800 text-sm px-2 py-1 rounded-md"
@@ -94,18 +86,18 @@ export default function ProjectCard({
                 </div>
               </div>
               <div className="flex gap-2 mt-auto">
-                <Button asChild variant="default">
-                  <a href={url} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" /> Live Project
+                <Button asChild variant="outline">
+                  <a href={project.url} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" /> {t("liveProject")}
                   </a>
                 </Button>
-                <Button asChild variant="secondary">
+                <Button asChild variant="outline">
                   <a
-                    href={sourceCodeUrl}
+                    href={project.sourceCodeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaGithub className="mr-2 h-4 w-4" /> Source Code
+                    <FaGithub className="mr-2 h-4 w-4" /> {t("sourceCode")}
                   </a>
                 </Button>
               </div>

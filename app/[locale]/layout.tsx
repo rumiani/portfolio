@@ -7,7 +7,6 @@ import Navbar from '@/components/navbar/navbar';
 import { Footer } from '@/components/footer/footer';
 import { ToastContainer } from 'react-toastify';
 import Head from "next/head";
-import { ThemeProvider } from "next-themes";
 import ThemedLayout from './themed-layout';
 
 export function generateStaticParams() {
@@ -28,7 +27,7 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html dir={locale === "en" ? "ltr" : "rtl"} lang={locale} suppressHydrationWarning>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>Rumiani</title>

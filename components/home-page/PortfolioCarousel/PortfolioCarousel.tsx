@@ -11,8 +11,11 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { projects } from "@/utils/data/projects";
+import { useTranslations } from "next-intl";
+import _ from "lodash";
 
 export function PortfolioCarousel() {
+  const t = useTranslations("Projects")
   return (
     <Carousel
       opts={{ loop: true }}
@@ -22,10 +25,10 @@ export function PortfolioCarousel() {
       <CarouselContent className="h-[400px] mx-auto">
         {projects.map((project, index) => (
           <CarouselItem key={index} title={project.name} className="CarouselItem px-0">
-            <a href={`#${project.id}`} className="group">
+            <a href={`#${project.name}`} className="group">
               <div className="relative h-full w-[98%] bg-red-300 mx-auto rounded-2xl overflow-hidden ">
                 <Image
-                  alt={project.name}
+                  alt={_.capitalize(project.name)}
                   src={project.imgSrc}
                   fill
                   className="object-cover w-full mx-auto"
@@ -33,9 +36,9 @@ export function PortfolioCarousel() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <h3 className="text-2xl font-bold">{project.name}</h3>
+                  <h3 className="text-2xl font-bold">{_.capitalize(project.name)}</h3>
                   <p className="text-sm text-gray-200 mt-1">
-                    {project.shortDescription}
+                    {t(`${project.name}.shortDescription`)}
                   </p>
                 </div>
               </div>
