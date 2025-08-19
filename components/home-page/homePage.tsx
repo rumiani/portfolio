@@ -7,7 +7,7 @@ export default function HomePage() {
   return (
     <div className="font-sans">
       <main className="w-full">
-        <section className="flex flex-col md:flex-row justify-between gap-4">
+        <section className="h-96 flex flex-col md:flex-row justify-between gap-4">
           <div className="w-full lg:w-2/3">
             <AboutMe />
           </div>

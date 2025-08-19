@@ -9,7 +9,6 @@ import { useTranslations } from "next-intl";
 
 export default function AboutMe() {
   const t = useTranslations("HomePage")
-  console.log(t("jobTitle"));
 
   return (
     <motion.div
@@ -18,7 +17,7 @@ export default function AboutMe() {
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8 }}
     >
-      <Card className=" border border-base overflow-hidden shadow-lg max-w-4xl mx-auto">
+      <Card className="lg:h-96 border border-base overflow-hidden shadow-lg max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row">
           <div className="relative w-full md:w-1/2 lg:w-1/3 aspect-square group overflow-hidden">
             <Image
