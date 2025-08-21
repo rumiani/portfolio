@@ -35,7 +35,7 @@ export default function ProjectCard(project: Project) {
       transition={{ duration: 1 }}
     >
       <Card id={project.name} className="border border-base overflow-hidden shadow-lg max-w-lg mx-auto lg:max-w-none lg:w-full">
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col lg:flex-row gap-2">
           <div className=" aspect-square relative w-full lg:w-1/3">
             <Image
               src={project.imgSrc}
@@ -78,7 +78,7 @@ export default function ProjectCard(project: Project) {
                   {project.technologies.map((tech, i) => (
                     <span
                       key={i}
-                      className="bg-gray-100 text-gray-800 text-sm px-2 py-1 rounded-md"
+                      className="bg-gray-200 dark:bg-gray-700  text-sm px-2 py-1 rounded-md"
                     >
                       {tech}
                     </span>

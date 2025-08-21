@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer utilities {
   .border-base {
@@ -29,14 +30,6 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  @apply bg-white text-black;
-}
-
-.dark body {
-  @apply bg-gray-900 text-white;
 }
 
 button,

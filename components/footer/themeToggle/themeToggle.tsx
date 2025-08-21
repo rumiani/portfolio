@@ -17,7 +17,7 @@ export default function ThemeToggle() {
     <Button
       variant="outline"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-      className={`${theme === 'light' ? "bg-gray-200" : " dark:bg-gray-800"} px-4 py-2 rounded `}
+      className={`${theme === 'light' ? "bg-gray-900 text-white" : " bg-white text-gray-900"} px-4 py-2 rounded `}
     >
       {theme === 'light' ? `🌙 ${t("dark")}` : `☀️ ${t("light")}`}
     </Button>

@@ -22,7 +22,7 @@ export const projects: Project[] = [
   },
   {
     name: "xtrim",
-    imgSrc: "/assets/projects-logos/xtrim.jpg",
+    imgSrc: "/assets/projects-logos/xtrim.png",
     url: "https://github.com/rumiani/xtrim/releases",
     sourceCodeUrl: "https://github.com/rumiani/xtrim",
     technologies: ["React.js", "TypeScript", "TailwindCSS", "CRXJS", "Vite"],

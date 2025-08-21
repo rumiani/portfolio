@@ -5,7 +5,6 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Turnstile, { useTurnstile } from "react-turnstile";
-
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -20,7 +19,7 @@ export default function ContactForm() {
     const [loading, setLoading] = useState(false);
     const turnstile = useTurnstile();
     const t = useTranslations("ContactPage");
-    const { language } = useLanguageStore();
+    const language = useLanguageStore((state) => state.language);
 
     const schema = z.object({
         title: z.string().min(3, t("formTitleError")),
@@ -65,7 +64,7 @@ export default function ContactForm() {
                             <FormControl>
                                 <Input placeholder={t("formTitlePlaceholder")} {...field} />
                             </FormControl>
-                            <FormMessage />
+                            <FormMessage className="text-red-500"/>
                         </FormItem>
                     )}
                 />
@@ -78,7 +77,7 @@ export default function ContactForm() {
                             <FormControl>
                                 <Textarea placeholder={t("formBodyPlaceholder")} {...field} />
                             </FormControl>
-                            <FormMessage />
+                            <FormMessage className="text-red-500"/>
                         </FormItem>
                     )}
                 />
@@ -91,22 +90,21 @@ export default function ContactForm() {
                             <FormControl>
                                 <Input placeholder={t("formEmailPlaceholder")} type="email" {...field} />
                             </FormControl>
-                            <FormMessage />
+                            <FormMessage className="text-red-500" />
                         </FormItem>
                     )}
                 />
-
                 <FormField
                     control={form.control}
                     name="token"
                     render={({ field }) => (
                         <FormItem className="w-fit mx-auto min-h-16">
                             <Turnstile
-                            language={language}
+                                language={language}
                                 sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                                 onVerify={(token) => field.onChange(token)}
                             />
-                            <FormMessage />
+                            <FormMessage className="text-red-500"/>
                         </FormItem>
                     )}
                 />

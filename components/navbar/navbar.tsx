@@ -9,11 +9,9 @@ import LanguageSwitcher from "./langChange/LangChange";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { navItems } from "@/utils/data/navItems";
-import { useTheme } from "next-themes";
 export default function Navbar() {
     const [open, setOpen] = useState(false);
     const pathName = usePathname();
-    const {theme} = useTheme()
     const pathWithoutLang = "/" + pathName.split("/").slice(2).join("/");
     const t = useTranslations("Navbar");
 
@@ -38,20 +36,20 @@ export default function Navbar() {
                                 <List />
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="right" className={`${theme === "light"? "bg-white":"bg-gray-900" } w-64`}>
-                            <div className="flex justify-between items-center mb-4">
-                                <SheetTitle className="text-lg font-bold p-2">
-                                    {t("menu")}
-                                </SheetTitle>
+                        <SheetContent side="right" className="bg-white dark:bg-gray-700 w-64 p-4">
+                            <div className="flex justify-between items-center gap-4 bg-green-300">
                                 <button></button>
                             </div>
+                                <SheetTitle className="text-lg font-bold mt-4">
+                                    {t("menu")}
+                                </SheetTitle>
                             <div className="flex flex-col gap-2">
                                 {translatedNavItems.map((item) => {
                                     const isActive = pathWithoutLang === item.href;
                                     return <Link
                                         key={item.href}
                                         href={item.href}
-                                        className="p-2 hover:shadow shadow-2xl flex flex-row gap-2"
+                                        className="py-2 hover:shadow shadow-2xl flex flex-row gap-2"
                                         onClick={() => setOpen(false)}
                                     >
                                         {isActive ?

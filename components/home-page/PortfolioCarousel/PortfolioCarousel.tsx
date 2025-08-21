@@ -23,7 +23,7 @@ export function PortfolioCarousel() {
       className="relative group rounded-2xl"
       dir="ltr"
     >
-      <CarouselContent className="h-96 mx-auto">
+      <CarouselContent className="min-h-96 h-fit mx-auto">
         {projects.map((project, index) => (
           <CarouselItem key={index} title={project.name} className="CarouselItem px-0">
             <a href={`#${project.name}`} className="group">

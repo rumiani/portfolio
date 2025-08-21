@@ -1,11 +1,11 @@
 {
   "HomePage": {
-    "aboutMe": "About Me",
     "name": "Maziar Rumiani",
     "jobTitle": "• Software Engineer • Problem Solver • Creator",
     "summary": "I'm a passionate developer who loves building clean, scalable, and impactful applications. With a strong background in web technologies, I enjoy turning complex problems into elegant solutions.",
     "technologiesTitle": "Technologies I use:",
-    "learnMoreAboutMe": "Lean more about me"
+    "learnMoreAboutMe": "Lean more about me",
+    "contactMe":"Contact me"
   },
   "ContactPage": {
     "title": "Contact me for businness inquiries",
@@ -17,7 +17,7 @@
     "formBodyError": "Body is too short",
     "formEmail": "Email",
     "formEmailPlaceholder": "you@example.com",
-    "formEmailError": "Ivalid Email",
+    "formEmailError": "Invalid Email",
     "formSubmit": "Send",
     "formSubmitting": "Sending ...",
     "turnstileError": "Verification required"
