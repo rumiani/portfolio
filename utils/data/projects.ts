@@ -3,7 +3,7 @@ import { Project } from "@/types/types";
 export const projects: Project[] = [
   {
     name: "memoleit",
-    imgSrc: "/assets/projects-logos/memoleit.jpg",
+    imgSrc: "/assets/projects-logos/memoleit.avif",
     url: "http://memoleit.vercel.app/",
     sourceCodeUrl: "https://github.com/rumiani/memoleit",
     technologies: ["Next.js",
@@ -15,14 +15,14 @@ export const projects: Project[] = [
   },
   {
     name: "trackrate",
-    imgSrc: "/assets/projects-logos/trackrate.jpeg",
+    imgSrc: "/assets/projects-logos/trackrate.avif",
    url: "https://t.me/trackrate_bot",
     sourceCodeUrl: "https://github.com/rumiani/trackrate",
     technologies: ["Next.js", "Node.js", "Grammy", "Prisma"],
   },
   {
     name: "xtrim",
-    imgSrc: "/assets/projects-logos/xtrim.png",
+    imgSrc: "/assets/projects-logos/xtrim.avif",
     url: "https://github.com/rumiani/xtrim/releases",
     sourceCodeUrl: "https://github.com/rumiani/xtrim",
     technologies: ["React.js", "TypeScript", "TailwindCSS", "CRXJS", "Vite"],

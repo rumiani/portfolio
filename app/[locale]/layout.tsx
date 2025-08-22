@@ -8,7 +8,11 @@ import { Footer } from '@/components/footer/footer';
 import { ToastContainer } from 'react-toastify';
 import Head from "next/head";
 import ThemedLayout from '../../components/providers/themed-layout';
-
+import { Inter } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",   // important
+});
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -27,7 +31,7 @@ export default async function RootLayout({
   }
 
   return (
-    <html dir={locale === "en" ? "ltr" : "rtl"} lang={locale} suppressHydrationWarning>
+    <html dir={locale === "en" ? "ltr" : "rtl"} lang={locale} suppressHydrationWarning className={inter.className}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>Rumiani</title>
@@ -39,7 +43,7 @@ export default async function RootLayout({
             <div className='fixed w-full top-0 bg-white dark:bg-gray-900 z-10'>
               <Navbar />
             </div>
-            <div className='mt-20 p-4 sm:p-6 md:p-8 lg:p-10 overflow-hidden'>
+            <div className='w-full mt-20 p-4 sm:p-6 md:p-8 lg:p-10 overflow-hidden'>
               <AnimatedLayout>
                 {children}
               </AnimatedLayout>

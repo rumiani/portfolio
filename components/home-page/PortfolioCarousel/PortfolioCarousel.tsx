@@ -27,13 +27,15 @@ export function PortfolioCarousel() {
         {projects.map((project, index) => (
           <CarouselItem key={index} title={project.name} className="CarouselItem px-0">
             <a href={`#${project.name}`} className="group">
-              <div className="relative h-full w-[98%] bg-red-300 mx-auto rounded-2xl overflow-hidden ">
+              <div className="relative h-full w-[98%] mx-auto rounded-2xl overflow-hidden ">
                 <Image
                   alt={project.name}
                   src={project.imgSrc}
-                  fill
-                  className="object-cover w-full mx-auto"
+                  width={310}       
+                  height={310}
+                  className="object-cover w-full h-full mx-auto"
                   priority={index === 0}
+
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-500">

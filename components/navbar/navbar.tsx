@@ -25,20 +25,20 @@ export default function Navbar() {
             <div className="flex justify-between items-center ">
                 <div className="flex flex-row ">
                     <Link href="/" className="text-xl font-bold">
-                        <Image src="/logo.png" alt="Logo" width={32} height={32} className="round rounded-full" />
+                        <Image src="/logo.avif" alt="Logo" width={32} height={32} priority className="round rounded-full" />
                     </Link>
                     <LanguageSwitcher />
                 </div>
                 <div className="md:hidden">
                     <Sheet open={open} onOpenChange={setOpen}>
                         <SheetTrigger asChild>
-                            <Button variant="ghost" size="icon">
+                            <Button variant="ghost" size="icon" aria-label="Open menu">
                                 <List />
                             </Button>
                         </SheetTrigger>
                         <SheetContent side="right" className="bg-white dark:bg-gray-700 w-64 p-4">
                             <div className="flex justify-between items-center gap-4 bg-green-300">
-                                <button></button>
+                                <button aria-label="Close menu"></button>
                             </div>
                                 <SheetTitle className="text-lg font-bold mt-4">
                                     {t("menu")}
