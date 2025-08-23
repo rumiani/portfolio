@@ -4,5 +4,5 @@ export type Project = {
   url: string;
   sourceCodeUrl: string;
   technologies: string[];
-  isAvailable: boolean;
+  isAvailable?: boolean;
 };

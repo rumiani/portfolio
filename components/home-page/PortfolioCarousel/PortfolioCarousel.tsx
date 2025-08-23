@@ -12,7 +12,6 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { projects } from "@/utils/data/projects";
 import { useTranslations } from "next-intl";
-import _ from "lodash";
 
 export function PortfolioCarousel() {
   const t = useTranslations("Projects")
