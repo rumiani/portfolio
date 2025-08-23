@@ -12,6 +12,7 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { projects } from "@/utils/data/projects";
 import { useTranslations } from "next-intl";
+import _ from "lodash";
 
 export function PortfolioCarousel() {
   const t = useTranslations("Projects")
@@ -38,9 +39,9 @@ export function PortfolioCarousel() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  {/* <h3 className="text-2xl font-bold">{_.capitalize(project.name)}</h3> */}
+                  <h3 className="text-2xl font-bold">{_.capitalize(project.name)}</h3>
                   <p className="text-sm text-gray-200 mt-1">
-                    {/* {t(`${project.name}.shortDescription`)} */}
+                    {t(`${project.name}.shortDescription`)}
                   </p>
                 </div>
               </div>
