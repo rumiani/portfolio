@@ -1,5 +1,6 @@
 import ContactForm from "@/components/contact-page/contactForm/contactForm";
 import { useTranslations } from "next-intl";
+
 export const metadata = {
   title: "Rumiani | Contact",
   description: "Contact me for businness inquiries.",
