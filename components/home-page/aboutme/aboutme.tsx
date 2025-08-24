@@ -10,8 +10,7 @@ export default function AboutMe() {
 
   return (
     <AboutMeMotion>
-
-      <Card className="lg:h-96 border border-base overflow-auto shadow-lg max-w-4xl mx-auto">
+      <Card className="md:h-96 border border-base overflow-auto shadow-lg max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row">
           <div className="relative w-full md:w-1/2 lg:w-1/3 aspect-square group overflow-hidden">
             <Image
@@ -32,12 +31,10 @@ export default function AboutMe() {
                 {t("jobTitle")}
               </p>
             </CardHeader>
-
-            <CardContent className="flex flex-col gap-4 pt-4">
+            <CardContent className="flex flex-col gap-4 pt-2">
               <p className="leading-relaxed">
                 {t("summary")}
               </p>
-
               <div>
                 <h3 className="font-semibold">{t("technologiesTitle")}</h3>
                 <div className="flex flex-wrap gap-2 mt-2">
@@ -45,8 +42,7 @@ export default function AboutMe() {
                     (tech, i) => (
                       <span
                         key={i}
-
-                        className="bg-gray-200 dark:bg-gray-700 text-sm px-2 py-1 rounded-md"
+                        className="bg-gray-200 dark:bg-gray-700 text-xs px-1 py-1 rounded-md"
                       >
                         {tech}
                       </span>
@@ -54,16 +50,17 @@ export default function AboutMe() {
                   )}
                 </div>
               </div>
-
               <div className="mt-auto flex flex-row gap-4">
-                <Button asChild variant="outline" size="lg" className="rounded-full shadow-md">
-                  <Link href="/about">
+                <Button asChild size="lg" className="shadow-md">
+                  <Link href="/resume">
                     {t("learnMoreAboutMe")} →
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-full shadow-md  animate-bounce">
+                <Button asChild size="lg" className="rainbow-border shadow-md">
                   <Link href="/contact">
-                    {t("contactMe")} →
+                    <span className="btn-inner">
+                      {t("contactMe")} →
+                    </span>
                   </Link>
                 </Button>
               </div>

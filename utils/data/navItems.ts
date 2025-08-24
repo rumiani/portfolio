@@ -4,8 +4,6 @@ import {
   HiOutlineHome,
   HiUser,
   HiOutlineUser,
-  HiFolder,
-  HiOutlineFolder,
   HiMail,
   HiOutlineMail,
 } from "react-icons/hi";
