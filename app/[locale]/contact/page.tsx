@@ -1,10 +1,14 @@
 import ContactForm from "@/components/contact-page/contactForm/contactForm";
+import { Metadata } from "next";
 import { useTranslations } from "next-intl";
-
-export const metadata = {
-  title: "Rumiani | Contact",
-  description: "Contact me for businness inquiries.",
-};
+import { getTranslations } from "next-intl/server";
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("ContactPage")
+  return {
+    title: t('metaData.title'),
+    description: t('metaData.description'),
+  }
+}
 export default function Contact() {
   const t = useTranslations('ContactPage');
 
