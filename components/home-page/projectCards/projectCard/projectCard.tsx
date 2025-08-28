@@ -67,6 +67,7 @@ export default function ProjectCard(project: Project) {
               fill
               className="object-cover"
               priority
+              loading="lazy"
             />
           </div>
           <div className="flex-1 flex flex-col">

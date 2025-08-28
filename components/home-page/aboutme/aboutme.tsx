@@ -19,6 +19,7 @@ export default function AboutMe() {
               fill
               className="object-cover transition duration-500 group-hover:brightness-110"
               priority
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-500">
               <h2 className="text-white text-2xl font-bold">{t("name")}</h2>

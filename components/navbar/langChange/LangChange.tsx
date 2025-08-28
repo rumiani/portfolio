@@ -1,34 +1,18 @@
-"use client";
+'use client';
+import { usePathname, useRouter } from 'next/navigation';
 
-import { usePathname, useRouter } from "@/i18n/navigation";
-import { useLanguageStore } from "@/stores/useLanguageStore";
-
-export default function LanguageSwitcher() {
-    const { language, setLanguage } = useLanguageStore();
+export default function Toggle() {
     const router = useRouter();
-    const pathname = usePathname();
-
-    function changeLang(lang: "fa" | "en") {
-        setLanguage(lang);
-        router.replace(pathname, { locale: lang });
-    }
+    const pathname = usePathname()
+    const currentPath = pathname.split("/")[1];
+    const nextLocale = currentPath === "fa" ? "en" : "fa";
+    const newPath = pathname.replace(currentPath, nextLocale);
 
     return (
-        <div className="flex gap-2">
-            {language === "fa" ?
-                <button
-                    className={`px-3 py-1 rounded `}
-                    onClick={() => changeLang("en")}
-                >
-                    English
-                </button> :
-                <button
-                    className={`px-3 py-1 rounded `}
-                    onClick={() => changeLang("fa")}
-                >
-                    فارسی
-                </button>
-            }
-        </div>
+        <button onClick={() => router.push(`${newPath}`)}
+            className="`px-3 py-1 text-sm rounded"
+        >
+            {nextLocale === "en" ? "EN" : "فارسی"}
+        </button>
     );
 }

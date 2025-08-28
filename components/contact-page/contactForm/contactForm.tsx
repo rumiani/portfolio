@@ -12,14 +12,14 @@ import { Button } from "@/components/ui/button";
 import { toast } from "react-toastify";
 import { useTranslations } from "next-intl";
 import { Spinner } from "@/components/general/Spinner";
-import { useLanguageStore } from "@/stores/useLanguageStore";
-
+import { usePathname } from "next/navigation";
 
 export default function ContactForm() {
     const [loading, setLoading] = useState(false);
     const turnstile = useTurnstile();
     const t = useTranslations("ContactPage");
-    const language = useLanguageStore((state) => state.language);
+    const pathname = usePathname()
+    const language = pathname.split("/")[1];
 
     const schema = z.object({
         title: z.string().min(3, t("formTitleError")),
@@ -64,7 +64,7 @@ export default function ContactForm() {
                             <FormControl>
                                 <Input placeholder={t("formTitlePlaceholder")} {...field} />
                             </FormControl>
-                            <FormMessage className="text-red-500"/>
+                            <FormMessage className="text-red-500" />
                         </FormItem>
                     )}
                 />
@@ -77,7 +77,7 @@ export default function ContactForm() {
                             <FormControl>
                                 <Textarea placeholder={t("formBodyPlaceholder")} {...field} />
                             </FormControl>
-                            <FormMessage className="text-red-500"/>
+                            <FormMessage className="text-red-500" />
                         </FormItem>
                     )}
                 />
@@ -104,7 +104,7 @@ export default function ContactForm() {
                                 sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                                 onVerify={(token) => field.onChange(token)}
                             />
-                            <FormMessage className="text-red-500"/>
+                            <FormMessage className="text-red-500" />
                         </FormItem>
                     )}
                 />

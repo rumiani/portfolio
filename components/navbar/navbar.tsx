@@ -23,9 +23,15 @@ export default function Navbar() {
     return (
         <nav dir="ltr" className="w-full border-b border-base px-4 py-3 md:flex md:justify-between md:items-center">
             <div className="flex justify-between items-center ">
-                <div className="flex flex-row ">
+                <div className="flex flex-row gap-2 ">
                     <Link href="/" className="text-xl font-bold">
-                        <Image src="/logo.avif" alt="Logo" width={32} height={32} priority className="round rounded-full" />
+                        <Image src="/logo.avif" 
+                        alt="Logo"
+                        width={32} 
+                        height={32} 
+                        priority 
+                        loading="lazy"
+                        className="round rounded-full" />
                     </Link>
                     <LanguageSwitcher />
                 </div>
@@ -40,9 +46,9 @@ export default function Navbar() {
                             <div className="flex justify-between items-center gap-4 bg-green-300">
                                 <button aria-label="Close menu"></button>
                             </div>
-                                <SheetTitle className="text-lg font-bold mt-4">
-                                    {t("menu")}
-                                </SheetTitle>
+                            <SheetTitle className="text-lg font-bold mt-4">
+                                {t("menu")}
+                            </SheetTitle>
                             <div className="flex flex-col gap-2">
                                 {translatedNavItems.map((item) => {
                                     const isActive = pathWithoutLang === item.href;

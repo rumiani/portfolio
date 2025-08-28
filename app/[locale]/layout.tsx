@@ -22,7 +22,7 @@ export default async function RootLayout({
   params
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: string }>
 }) {
   const { locale } = await params;
 
@@ -31,11 +31,11 @@ export default async function RootLayout({
   }
 
   return (
-    <html dir={locale === "en" ? "ltr" : "rtl"} lang={locale} suppressHydrationWarning className={inter.className}>
+    <html dir={locale === "en" ? "ltr" : "rtl"} suppressHydrationWarning className={inter.className}
+      data-scroll-behavior="smooth">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>Rumiani</title>
-        {/* <script dangerouslySetInnerHTML={{ __html: `(function(){try{const t=localStorage.getItem('theme');const dark=t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',!!dark);document.documentElement.style.colorScheme=dark?'dark':'light';}catch(e){} })()` }} /> */}
       </Head>
       <body className='max-w-7xl min-h-screen mx-auto'>
         <ThemedLayout>
