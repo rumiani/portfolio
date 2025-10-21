@@ -14,7 +14,7 @@ export default function Resume() {
     const { resolvedTheme } = useTheme();
     const [loading, setLoading] = useState(true);
     const [mounted, setMounted] = useState(false);
-    const t = useTranslations('AboutPage');
+    const t = useTranslations('ResumePage');
 
     useEffect(() => {
         setMounted(true);
