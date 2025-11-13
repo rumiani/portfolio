@@ -29,7 +29,6 @@ export default function Navbar() {
                         alt="Logo"
                         width={32} 
                         height={32} 
-                        priority 
                         loading="lazy"
                         className="round rounded-full" />
                     </Link>

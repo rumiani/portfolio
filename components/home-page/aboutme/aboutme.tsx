@@ -39,7 +39,20 @@ export default function AboutMe() {
               <div>
                 <h3 className="font-semibold">{t("technologiesTitle")}</h3>
                 <div className="flex flex-wrap gap-2 mt-2">
-                  {["React", "Next.js", "TypeScript", "TailwindCSS", "Node.js", "docker", "git"].map(
+                  {[
+  "Go",
+  "Gin",
+  "GORM",
+  "PostgreSQL",
+  "Docker",
+  "Git",
+  "CI/CD",
+  "SQL",
+  "React",
+  "Next.js",
+  "TypeScript",
+  "TailwindCSS",
+  "Node.js"].map(
                     (tech, i) => (
                       <span
                         key={i}
