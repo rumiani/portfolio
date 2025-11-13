@@ -1,9 +1,0 @@
-{
-  "/api/check-url/route": "/api/check-url",
-  "/_not-found/page": "/_not-found",
-  "/api/contact/route": "/api/contact",
-  "/[locale]/[...rest]/page": "/[locale]/[...rest]",
-  "/[locale]/page": "/[locale]",
-  "/[locale]/contact/page": "/[locale]/contact",
-  "/[locale]/resume/page": "/[locale]/resume"
-}

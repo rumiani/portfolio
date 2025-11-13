@@ -1,9 +1,0 @@
-{
-  "/api/check-url/route": "app/api/check-url/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/contact/route": "app/api/contact/route.js",
-  "/[locale]/[...rest]/page": "app/[locale]/[...rest]/page.js",
-  "/[locale]/page": "app/[locale]/page.js",
-  "/[locale]/contact/page": "app/[locale]/contact/page.js",
-  "/[locale]/resume/page": "app/[locale]/resume/page.js"
-}
