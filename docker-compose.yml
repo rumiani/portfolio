@@ -1,12 +1,10 @@
 services:
-  app:
-    build:
-      context: ./
-      target: prod
-      dockerfile: Dockerfile
-    image: portfolio
+  web:
+    build: .
+    container_name: portfolio
+    restart: always
     ports:
-      - "3000:3000"
+      - "80:3000"
     environment:
-      - NODE_ENV=production
-    restart: unless-stopped
+      NODE_ENV: production
+  restart: unless-stopped
