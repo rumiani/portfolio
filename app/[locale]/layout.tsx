@@ -6,9 +6,19 @@ import "@/app/globals.css";
 import Navbar from '@/components/navbar/navbar';
 import { Footer } from '@/components/footer/footer';
 import { ToastContainer } from 'react-toastify';
-import Head from "next/head";
 import ThemedLayout from '../../components/providers/themed-layout';
 import { Inter } from "next/font/google";
+
+import type { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Rumiani',
+  icons: {
+    icon: '/favicon.ico',
+  }
+}
+
+
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",   // important
@@ -33,10 +43,6 @@ export default async function RootLayout({
   return (
     <html dir={locale === "en" ? "ltr" : "rtl"} suppressHydrationWarning className={inter.className}
       data-scroll-behavior="smooth">
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <title>Rumiani</title>
-      </Head>
       <body className='max-w-7xl min-h-screen mx-auto'>
         <ThemedLayout>
           <NextIntlClientProvider>
