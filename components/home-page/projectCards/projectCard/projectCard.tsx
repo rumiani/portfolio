@@ -66,7 +66,6 @@ export default function ProjectCard(project: Project) {
               alt={project.name}
               fill
               className="object-cover"
-              priority
               loading="lazy"
             />
           </div>

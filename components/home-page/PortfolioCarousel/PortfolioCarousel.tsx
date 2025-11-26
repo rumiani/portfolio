@@ -34,7 +34,6 @@ export function PortfolioCarousel() {
                   width={310}
                   height={310}
                   className="object-cover w-full h-full mx-auto"
-                  priority={index === 0}
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

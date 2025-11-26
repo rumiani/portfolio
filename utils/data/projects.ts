@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     name: "memoleit",
     imgSrc: "/assets/projects-logos/memoleit.avif",
-    url: "http://memoleit.vercel.app/",
+    url: "http://memoleit.rumiani.ir/",
     sourceCodeUrl: "https://github.com/rumiani/memoleit",
     technologies: ["Next.js",
       "React",

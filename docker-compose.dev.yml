@@ -1,15 +1,17 @@
 services:
-  app:
+  web:
+    container_name: nextjs_dev
     build:
-      context: ./
-      target: dev
-      dockerfile: Dockerfile
-    image: portfolio
-    volumes:
-      - .:/app
-      - /app/node_modules
+      context: .
+      dockerfile: Dockerfile.dev
     ports:
       - "3000:3000"
-    command: npm run dev
+    volumes:
+      - .:/app               # mount code for hot reload
+      - /app/node_modules    # prevent overwriting container modules
+    env_file:
+      - .env.local
     environment:
-      - CHOKIDAR_USEPOLLING=true
+      NODE_ENV: development
+    command: npm run dev
+    
